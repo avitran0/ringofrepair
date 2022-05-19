@@ -20,7 +20,7 @@ public class RingRepair extends Item {
                 for (int i = 0; i < serverPlayer.getInventory().size(); i++) {
                     ItemStack stack = serverPlayer.getInventory().getStack(i);
                     if (!stack.isEmpty()) {
-                        if (stack.isDamaged()) {
+                        if (stack.isDamaged() && !(stack == serverPlayer.getMainHandStack())) {
                             stack.setDamage(stack.getDamage()-1);
                             break;
                         }
