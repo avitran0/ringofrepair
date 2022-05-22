@@ -11,7 +11,7 @@ public class RingRepair extends Item {
         super(settings);
     }
 
-    public static void repair(World world, PlayerEntity player) {
+    public static void repair(World world, PlayerEntity player, int numRings) {
         if (!world.isClient) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
             if (serverPlayer.age % 60 == 0) {
