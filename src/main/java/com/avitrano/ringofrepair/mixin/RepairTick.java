@@ -2,6 +2,7 @@ package com.avitrano.ringofrepair.mixin;
 
 import com.avitrano.ringofrepair.InventoryChecker;
 import com.avitrano.ringofrepair.RingRepair;
+import com.avitrano.ringofrepair.RingRepairNetherite;
 import com.avitrano.ringofrepair.Ringofrepair;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -33,5 +34,8 @@ public abstract class RepairTick extends LivingEntity {
         {
             RingRepair.repair(world, player);
         }
+
+        if(InventoryChecker.hasItemInInventory(player, Ringofrepair.REPAIR_RING_NETHERITE))
+        {RingRepairNetherite.repair(world, player);}
     }
 }

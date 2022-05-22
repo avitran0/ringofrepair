@@ -8,10 +8,14 @@ import net.minecraft.util.registry.Registry;
 
 
 public class Ringofrepair implements ModInitializer {
-    public static final RingRepair REPAIR_RING = new RingRepair(new FabricItemSettings().maxCount(1).group(ItemGroup.TOOLS));
+    public static final String MODID = "ringofrepair";
+
+    public static final RingRepair REPAIR_RING = new RingRepair(new FabricItemSettings().maxCount(1).group(ItemGroup.MISC));
+    public static final RingRepairNetherite REPAIR_RING_NETHERITE = new RingRepairNetherite(new FabricItemSettings().maxCount(1).group(ItemGroup.MISC));
 
     @Override
     public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier("ringofrepair", "repair_ring"), REPAIR_RING);
+        Registry.register(Registry.ITEM, new Identifier(MODID, "repair_ring"), REPAIR_RING);
+        Registry.register(Registry.ITEM, new Identifier(MODID, "repair_ring_netherite"), REPAIR_RING_NETHERITE);
     }
 }

@@ -6,15 +6,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 
-public class RingRepair extends Item {
-    public RingRepair(Settings settings) {
+public class RingRepairNetherite extends Item {
+    public RingRepairNetherite(Settings settings) {
         super(settings);
     }
 
     public static void repair(World world, PlayerEntity player) {
         if (!world.isClient) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-            if (serverPlayer.age % 60 == 0) {
+            if (serverPlayer.age % 20 == 0) {
                 for (int i = 0; i < serverPlayer.getInventory().size(); i++) {
                     ItemStack stack = serverPlayer.getInventory().getStack(i);
                     if (!stack.isEmpty()) {
