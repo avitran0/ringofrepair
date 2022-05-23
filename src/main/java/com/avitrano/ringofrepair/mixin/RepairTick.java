@@ -29,11 +29,10 @@ public abstract class RepairTick extends LivingEntity {
     public void repairTick(CallbackInfo ci)
     {
         PlayerEntity player = (PlayerEntity) (Object) this;
-        int numRings = InventoryChecker.hasItemInInventory(player, Ringofrepair.REPAIR_RING);
 
-        if(numRings != 0)
+        if(InventoryChecker.hasItemInInventory(player, Ringofrepair.REPAIR_RING))
         {
-            RingRepair.repair(world, player, numRings);
+            RingRepair.repair(world, player);
         }
 
         if(InventoryChecker.hasItemInInventory(player, Ringofrepair.REPAIR_RING_NETHERITE))

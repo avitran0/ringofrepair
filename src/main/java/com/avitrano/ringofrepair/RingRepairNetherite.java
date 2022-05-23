@@ -6,6 +6,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 
+import static com.avitrano.ringofrepair.Ringofrepair.CONFIG;
+
 public class RingRepairNetherite extends Item {
     public RingRepairNetherite(Settings settings) {
         super(settings);
@@ -14,7 +16,7 @@ public class RingRepairNetherite extends Item {
     public static void repair(World world, PlayerEntity player) {
         if (!world.isClient) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-            if (serverPlayer.age % 20 == 0) {
+            if (serverPlayer.age % CONFIG.repairDelayNetherite == 0) {
                 for (int i = 0; i < serverPlayer.getInventory().size(); i++) {
                     ItemStack stack = serverPlayer.getInventory().getStack(i);
                     if (!stack.isEmpty()) {

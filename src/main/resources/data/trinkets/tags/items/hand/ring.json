@@ -1,0 +1,7 @@
+{
+  "replace":  false,
+  "values": [
+    {"id":  "ringofrepair:repair_ring", "required":  false},
+    {"id":  "ringofrepair:repair_ring_netherite", "required":  false}
+  ]
+}
