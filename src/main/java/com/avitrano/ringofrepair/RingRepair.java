@@ -8,9 +8,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Pair;
 import net.minecraft.world.World;
 
-import java.util.List;
-import java.util.function.BiConsumer;
-
 import static com.avitrano.ringofrepair.Ringofrepair.CONFIG;
 
 public class RingRepair extends Item {
